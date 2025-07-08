@@ -3,6 +3,7 @@ const express = require('express');
 const connectDB = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
 const errorHandler = require('./middleware/errorHandler');
+const productRoutes = require('./routes/productRoutes');
 
 const app = express();
 app.use(express.json());
@@ -12,6 +13,7 @@ connectDB();
 
 // Routes
 app.use('/api/users', userRoutes);
+app.use('/api/products', productRoutes);
 
 // Root route
 app.get('/', (req, res) => {

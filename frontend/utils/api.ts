@@ -22,4 +22,13 @@ export async function getProfile(token: string) {
     throw new Error(error.message || 'فشل جلب البيانات');
   }
   return res.json();
+}
+
+export async function getProducts() {
+  const res = await fetch('http://localhost:5000/api/products');
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.message || 'فشل جلب المنتجات');
+  }
+  return res.json();
 } 

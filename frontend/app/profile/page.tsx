@@ -47,11 +47,11 @@ export default function ProfilePage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded shadow text-center">
-        <h2 className="text-2xl font-bold mb-2">الملف الشخصي</h2>
+        <h2 className="text-2xl font-bold mb-2 text-black">الملف الشخصي</h2>
         <div className="mt-4 space-y-2">
-          <div><span className="font-medium">الاسم:</span> {user?.name}</div>
-          <div><span className="font-medium">البريد الإلكتروني:</span> {user?.email}</div>
-          <div><span className="font-medium">الصلاحية:</span> {user?.isAdmin ? "مدير" : "مستخدم عادي"}</div>
+          <div><span className="font-bold text-black">الاسم:</span> {user?.name}</div>
+          <div><span className="font-bold text-black">البريد الإلكتروني:</span> {user?.email}</div>
+          <div><span className="font-bold text-black">الصلاحية:</span> {user?.isAdmin ? "مدير" : "مستخدم عادي"}</div>
         </div>
       </div>
     </div>

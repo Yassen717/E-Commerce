@@ -23,11 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={geistSans.className}>
         <nav className="bg-white shadow mb-6">
           <div className="max-w-6xl mx-auto px-4 py-3 flex gap-4 items-center">
-            <a href="/" className="font-bold text-lg text-blue-700">الرئيسية</a>
-            <a href="/products" className="text-gray-700 hover:text-blue-700">المنتجات</a>
-            <a href="/login" className="text-gray-700 hover:text-blue-700 ml-auto">تسجيل الدخول</a>
-            <a href="/register" className="text-gray-700 hover:text-blue-700">تسجيل جديد</a>
-            <a href="/profile" className="text-gray-700 hover:text-blue-700">الملف الشخصي</a>
+            <a href="/" className="font-bold text-lg text-black hover:underline">الرئيسية</a>
+            <a href="/products" className="text-black hover:underline">المنتجات</a>
+            <a href="/login" className="text-black hover:underline ml-auto">تسجيل الدخول</a>
+            <a href="/register" className="text-black hover:underline">تسجيل جديد</a>
+            <a href="/profile" className="text-black hover:underline">الملف الشخصي</a>
           </div>
         </nav>
         {children}

@@ -46,13 +46,21 @@ export default function ProfilePage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow text-center">
-        <h2 className="text-2xl font-bold mb-2 text-black">الملف الشخصي</h2>
-        <div className="mt-4 space-y-2">
-          <div><span className="font-bold text-black">الاسم:</span> {user?.name}</div>
-          <div><span className="font-bold text-black">البريد الإلكتروني:</span> {user?.email}</div>
-          <div><span className="font-bold text-black">الصلاحية:</span> {user?.isAdmin ? "مدير" : "مستخدم عادي"}</div>
+      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md flex flex-col items-center">
+        <div className="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+          <span className="text-4xl text-blue-600 font-bold">{user?.name?.charAt(0) || "U"}</span>
         </div>
+        <h2 className="text-2xl font-bold mb-2 text-black">{user?.name}</h2>
+        <div className="text-gray-600 mb-4">{user?.email}</div>
+        <div className="mb-6 px-4 py-2 rounded bg-gray-50 text-black font-bold inline-block">
+          {user?.isAdmin ? "مدير" : "مستخدم عادي"}
+        </div>
+        <button
+          onClick={() => router.push("/products")}
+          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition font-bold"
+        >
+          تصفح المنتجات
+        </button>
       </div>
     </div>
   );

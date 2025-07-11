@@ -19,15 +19,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="en" dir="ltr">
       <body className={geistSans.className}>
-        <nav className="bg-white shadow mb-6">
-          <div className="max-w-6xl mx-auto px-4 py-3 flex gap-4 items-center">
-            <a href="/" className="font-bold text-lg text-black hover:underline">الرئيسية</a>
-            <a href="/products" className="text-black hover:underline">المنتجات</a>
-            <a href="/login" className="text-black hover:underline ml-auto">تسجيل الدخول</a>
-            <a href="/register" className="text-black hover:underline">تسجيل جديد</a>
-            <a href="/profile" className="text-black hover:underline">الملف الشخصي</a>
+        <nav className="bg-white/80 backdrop-blur shadow-lg mb-8 rounded-b-2xl border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <span className="font-extrabold text-2xl text-blue-700 tracking-tight drop-shadow">E-Commerce</span>
+            </div>
+            <div className="flex gap-2 sm:gap-4 items-center flex-wrap">
+              <a href="/" className="font-semibold text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Home</a>
+              <a href="/products" className="font-medium text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Products</a>
+              <a href="/login" className="font-medium text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Login</a>
+              <a href="/register" className="font-medium text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Register</a>
+              <a href="/profile" className="font-medium text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Profile</a>
+            </div>
           </div>
         </nav>
         {children}

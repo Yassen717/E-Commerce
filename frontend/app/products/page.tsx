@@ -16,34 +16,34 @@ export default function ProductsPage() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-100">
-        <div className="bg-white p-8 rounded shadow text-center">جاري تحميل المنتجات...</div>
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-white">
+        <div className="bg-white/90 p-8 rounded-2xl shadow text-center border border-blue-100">Loading products...</div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-100">
-        <div className="bg-white p-8 rounded shadow text-center text-red-600">{error}</div>
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-white">
+        <div className="bg-white/90 p-8 rounded-2xl shadow text-center text-red-600 border border-red-100">{error}</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white py-10">
       <div className="max-w-6xl mx-auto px-4">
-        <h1 className="text-3xl font-bold mb-8 text-center text-black">المنتجات</h1>
+        <h1 className="text-4xl font-extrabold mb-8 text-center text-blue-700 drop-shadow">Products</h1>
         {products.length === 0 ? (
-          <div className="text-center text-black">لا توجد منتجات متاحة حالياً.</div>
+          <div className="text-center text-gray-700">No products available at the moment.</div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {products.map(product => (
-              <div key={product._id} className="bg-white rounded shadow p-4 flex flex-col items-center">
-                <img src={product.image} alt={product.name} className="w-32 h-32 object-cover mb-4 rounded" />
-                <h2 className="text-lg font-bold mb-2 text-black">{product.name}</h2>
-                <div className="text-black mb-1">{product.category}</div>
-                <div className="text-blue-600 font-bold text-black">{product.price} ج.م</div>
+              <div key={product._id} className="bg-white/90 rounded-2xl shadow-lg p-6 flex flex-col items-center border border-blue-100 hover:shadow-2xl transition">
+                <img src={product.image} alt={product.name} className="w-32 h-32 object-cover mb-4 rounded-xl border border-gray-200" />
+                <h2 className="text-lg font-bold mb-1 text-gray-900 text-center">{product.name}</h2>
+                <div className="text-gray-500 mb-1 text-sm">{product.category}</div>
+                <div className="text-blue-600 font-bold text-lg">{product.price} EGP</div>
               </div>
             ))}
           </div>

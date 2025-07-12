@@ -29,15 +29,15 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-green-50 to-white">
-      <div className="w-full max-w-md p-8 bg-white/90 rounded-3xl shadow-2xl border border-green-100">
-        <h2 className="text-3xl font-extrabold mb-6 text-center text-green-700 drop-shadow">Create a New Account</h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-surface to-background">
+      <div className="w-full max-w-md p-10 bg-white rounded-3xl shadow-card border border-surface">
+        <h2 className="text-3xl font-extrabold mb-6 text-center text-accent drop-shadow-sm">Create a New Account</h2>
+        <form className="space-y-5" onSubmit={handleSubmit}>
           <div>
-            <label className="block mb-1 font-bold text-gray-800">Full Name</label>
+            <label className="block mb-1 font-semibold text-text">Full Name</label>
             <input
               type="text"
-              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-900 bg-gray-50"
+              className="w-full border border-surface rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent-light text-text bg-surface"
               placeholder="Your full name"
               value={name}
               onChange={e => setName(e.target.value)}
@@ -45,10 +45,10 @@ export default function RegisterPage() {
             />
           </div>
           <div>
-            <label className="block mb-1 font-bold text-gray-800">Email</label>
+            <label className="block mb-1 font-semibold text-text">Email</label>
             <input
               type="email"
-              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-900 bg-gray-50"
+              className="w-full border border-surface rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent-light text-text bg-surface"
               placeholder="example@email.com"
               value={email}
               onChange={e => setEmail(e.target.value)}
@@ -56,10 +56,10 @@ export default function RegisterPage() {
             />
           </div>
           <div>
-            <label className="block mb-1 font-bold text-gray-800">Password</label>
+            <label className="block mb-1 font-semibold text-text">Password</label>
             <input
               type="password"
-              className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-900 bg-gray-50"
+              className="w-full border border-surface rounded-xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-accent-light text-text bg-surface"
               placeholder="••••••••"
               value={password}
               onChange={e => setPassword(e.target.value)}
@@ -67,16 +67,21 @@ export default function RegisterPage() {
             />
           </div>
           {error && <div className="text-red-600 text-sm text-center">{error}</div>}
-          {success && <div className="text-green-600 text-sm text-center">{success}</div>}
+          {success && <div className="text-accent text-sm text-center">{success}</div>}
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 rounded-lg font-semibold shadow hover:bg-green-700 transition"
+            className="w-full bg-accent text-white py-2 rounded-xl font-semibold shadow-card hover:bg-accent-dark transition-colors focus:outline-none focus:ring-2 focus:ring-accent-light"
             disabled={loading}
           >
             {loading ? "Registering..." : "Register"}
           </button>
         </form>
-        <p className="mt-4 text-center text-sm text-gray-700">Already have an account? <a href="/login" className="text-green-600 hover:underline">Login</a></p>
+        <a
+          href="/login"
+          className="block w-full mt-4 text-center bg-surface text-accent border border-accent py-2 rounded-xl font-semibold shadow-card hover:bg-accent hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-accent-light"
+        >
+          Already have an account? Login
+        </a>
       </div>
     </div>
   );

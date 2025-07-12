@@ -20,22 +20,22 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" dir="ltr">
-      <body className={geistSans.className}>
-        <nav className="bg-white/80 backdrop-blur shadow-lg mb-8 rounded-b-2xl border-b border-gray-200">
+      <body className="font-sans bg-background text-foreground">
+        <nav className="bg-white shadow-card mb-10 rounded-b-3xl border-b border-surface sticky top-0 z-30">
           <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <span className="font-extrabold text-2xl text-blue-700 tracking-tight drop-shadow">E-Commerce</span>
+              <span className="font-extrabold text-2xl text-primary tracking-tight drop-shadow-sm">E-Commerce</span>
             </div>
             <div className="flex gap-2 sm:gap-4 items-center flex-wrap">
-              <a href="/" className="font-semibold text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Home</a>
-              <a href="/products" className="font-medium text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Products</a>
-              <a href="/login" className="font-medium text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Login</a>
-              <a href="/register" className="font-medium text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Register</a>
-              <a href="/profile" className="font-medium text-gray-800 hover:text-blue-700 px-3 py-2 rounded transition-colors duration-200 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-200">Profile</a>
+              <a href="/" className="font-semibold text-foreground hover:text-primary px-4 py-2 rounded-xl transition-colors duration-200 hover:bg-primary-light/20 focus:outline-none focus:ring-2 focus:ring-primary-light">Home</a>
+              <a href="/products" className="font-medium text-foreground hover:text-primary px-4 py-2 rounded-xl transition-colors duration-200 hover:bg-primary-light/20 focus:outline-none focus:ring-2 focus:ring-primary-light">Products</a>
+              <a href="/login" className="font-medium text-foreground hover:text-primary px-4 py-2 rounded-xl transition-colors duration-200 hover:bg-primary-light/20 focus:outline-none focus:ring-2 focus:ring-primary-light">Login</a>
+              <a href="/register" className="font-medium text-foreground hover:text-primary px-4 py-2 rounded-xl transition-colors duration-200 hover:bg-primary-light/20 focus:outline-none focus:ring-2 focus:ring-primary-light">Register</a>
+              <a href="/profile" className="font-medium text-foreground hover:text-primary px-4 py-2 rounded-xl transition-colors duration-200 hover:bg-primary-light/20 focus:outline-none focus:ring-2 focus:ring-primary-light">Profile</a>
             </div>
           </div>
         </nav>
-        {children}
+        <main className="min-h-[calc(100vh-80px)] bg-surface pb-10">{children}</main>
       </body>
     </html>
   );

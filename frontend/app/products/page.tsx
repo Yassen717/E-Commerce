@@ -43,7 +43,7 @@ export default function ProductsPage() {
                 <img src={product.image} alt={product.name} className="w-32 h-32 object-cover mb-4 rounded-xl border border-surface" />
                 <h2 className="text-lg font-bold mb-1 text-text text-center">{product.name}</h2>
                 <div className="text-secondary mb-1 text-sm">{product.category}</div>
-                <div className="text-primary font-bold text-lg">{product.price} EGP</div>
+                <div className="text-primary font-bold text-lg">€{product.price}</div>
               </div>
             ))}
           </div>
